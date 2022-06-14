@@ -18,6 +18,7 @@ package config
 
 import (
 	"crypto/tls"
+	"github.com/cloudwego/hertz/pkg/common/registry"
 	"net"
 	"time"
 )
@@ -64,6 +65,8 @@ type Options struct {
 	Tracers                      []interface{}
 	TraceLevel                   interface{}
 	ListenConfig                 *net.ListenConfig
+	Registry                     registry.Registry
+	RegistryInfo                 *registry.Info
 }
 
 func (o *Options) Apply(opts []Option) {
@@ -183,6 +186,12 @@ func NewOptions(opts []Option) *Options {
 
 		// trace level, default LevelDetailed
 		TraceLevel: new(interface{}),
+
+		// service register implementation
+		Registry: nil,
+
+		// Registry Info for service register
+		RegistryInfo: nil,
 	}
 	options.Apply(opts)
 	return options
