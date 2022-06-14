@@ -23,7 +23,7 @@ import (
 	"path/filepath"
 	"regexp"
 
-	"github.com/cloudwego/hertz/tool/util/logs"
+	"github.com/cloudwego/hertz/cmd/hz/util/logs"
 	gv "github.com/hashicorp/go-version"
 )
 

@@ -19,9 +19,9 @@ package thrift
 import (
 	"fmt"
 
-	"github.com/cloudwego/hertz/tool/generator"
-	"github.com/cloudwego/hertz/tool/generator/model"
-	"github.com/cloudwego/hertz/tool/util"
+	"github.com/cloudwego/hertz/cmd/hz/generator"
+	"github.com/cloudwego/hertz/cmd/hz/generator/model"
+	"github.com/cloudwego/hertz/cmd/hz/util"
 	"github.com/cloudwego/thriftgo/generator/golang/styles"
 	"github.com/cloudwego/thriftgo/parser"
 )

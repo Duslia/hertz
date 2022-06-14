@@ -20,11 +20,11 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/cloudwego/hertz/tool/cmd/hz/app"
-	"github.com/cloudwego/hertz/tool/meta"
-	"github.com/cloudwego/hertz/tool/protobuf"
-	"github.com/cloudwego/hertz/tool/thrift"
-	"github.com/cloudwego/hertz/tool/util/logs"
+	"github.com/cloudwego/hertz/cmd/hz/app"
+	"github.com/cloudwego/hertz/cmd/hz/meta"
+	"github.com/cloudwego/hertz/cmd/hz/protobuf"
+	"github.com/cloudwego/hertz/cmd/hz/thrift"
+	"github.com/cloudwego/hertz/cmd/hz/util/logs"
 )
 
 func main() {

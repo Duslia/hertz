@@ -22,12 +22,12 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/cloudwego/hertz/tool/config"
-	"github.com/cloudwego/hertz/tool/generator"
-	"github.com/cloudwego/hertz/tool/generator/model"
-	"github.com/cloudwego/hertz/tool/meta"
-	"github.com/cloudwego/hertz/tool/util"
-	"github.com/cloudwego/hertz/tool/util/logs"
+	"github.com/cloudwego/hertz/cmd/hz/config"
+	"github.com/cloudwego/hertz/cmd/hz/generator"
+	"github.com/cloudwego/hertz/cmd/hz/generator/model"
+	"github.com/cloudwego/hertz/cmd/hz/meta"
+	"github.com/cloudwego/hertz/cmd/hz/util"
+	"github.com/cloudwego/hertz/cmd/hz/util/logs"
 	thriftgo_plugin "github.com/cloudwego/thriftgo/plugin"
 )
 

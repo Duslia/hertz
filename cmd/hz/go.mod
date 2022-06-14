@@ -1,4 +1,4 @@
-module github.com/cloudwego/hertz/tool
+module github.com/cloudwego/hertz/cmd/hz
 
 go 1.16
 

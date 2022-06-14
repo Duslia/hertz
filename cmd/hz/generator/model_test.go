@@ -20,8 +20,8 @@ import (
 	"testing"
 	"text/template"
 
-	"github.com/cloudwego/hertz/tool/generator/model"
-	"github.com/cloudwego/hertz/tool/meta"
+	"github.com/cloudwego/hertz/cmd/hz/generator/model"
+	"github.com/cloudwego/hertz/cmd/hz/meta"
 )
 
 type StringValue struct {

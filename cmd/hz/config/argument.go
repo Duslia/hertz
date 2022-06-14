@@ -22,8 +22,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/cloudwego/hertz/tool/meta"
-	"github.com/cloudwego/hertz/tool/util"
+	"github.com/cloudwego/hertz/cmd/hz/meta"
+	"github.com/cloudwego/hertz/cmd/hz/util"
 	"github.com/urfave/cli/v2"
 )
 
