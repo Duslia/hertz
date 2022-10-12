@@ -140,3 +140,10 @@ func WithRetryConfig(opts ...retry.Option) config.ClientOption {
 		o.RetryConfig = retryCfg
 	}}
 }
+
+// WithChunkStream sets enable chunk stream.
+func WithChunkStream(chunkStream bool) config.ClientOption {
+	return config.ClientOption{F: func(o *config.ClientOptions) {
+		o.ChunkStream = chunkStream
+	}}
+}
