@@ -225,15 +225,16 @@ func Write(resp *protocol.Response, w network.Writer) error {
 	}
 
 	header := resp.Header.Header()
-	_, err := w.WriteBinary(header)
-	if err != nil {
-		return err
-	}
+	//_, err := w.WriteBinary(header)
+	//if err != nil {
+	//	return err
+	//}
 	resp.Header.SetHeaderLength(len(header))
 	// Write body
-	if sendBody && bodyLen > 0 {
-		_, err = w.WriteBinary(body)
-	}
+	//if sendBody && bodyLen > 0 {
+	//	_, err = w.WriteBinary(body)
+	//}
+	_, err := w.Writev([][]byte{header, body})
 	return err
 }
 

@@ -289,9 +289,9 @@ func (s Server) Serve(c context.Context, conn network.Conn) (err error) {
 			zr = nil
 		}
 		// Flush the response.
-		if err = zw.Flush(); err != nil {
-			return
-		}
+		//if err = zw.Flush(); err != nil {
+		//	return
+		//}
 		if s.EnableTrace {
 			internalStats.Record(ctx.GetTraceInfo(), stats.WriteFinish, err)
 		}

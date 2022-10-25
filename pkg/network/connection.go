@@ -67,6 +67,7 @@ type Writer interface {
 	// NOTE: Before flush successfully, the buffer b should be valid.
 	WriteBinary(b []byte) (n int, err error)
 
+	Writev(b [][]byte) (n int, err error)
 	// Flush will send data to the peer end.
 	Flush() error
 }

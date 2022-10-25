@@ -74,6 +74,10 @@ func (c *Conn) Flush() error {
 	return c.Conn.Flush()
 }
 
+func (c *Conn) Writev(buffers [][]byte) (n int, err error) {
+	return c.Conn.Writev(buffers)
+}
+
 func (c *Conn) HandleSpecificError(err error, rip string) (needIgnore bool) {
 	if errors.Is(err, netpoll.ErrConnClosed) {
 		hlog.SystemLogger().Warnf("Netpoll error=%s, remoteAddr=%s", err.Error(), rip)

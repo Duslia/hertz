@@ -44,6 +44,11 @@ type Conn struct {
 	maxSize      int      // history max malloc size
 }
 
+func (c *Conn) Writev(b [][]byte) (n int, err error) {
+	//TODO implement me
+	panic("implement me")
+}
+
 func (c *Conn) SetReadTimeout(t time.Duration) error {
 	if t <= 0 {
 		return c.c.SetReadDeadline(time.Time{})

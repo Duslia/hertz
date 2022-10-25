@@ -43,6 +43,11 @@ type networkWriter struct {
 	w      io.Writer
 }
 
+func (w *networkWriter) Writev(b [][]byte) (n int, err error) {
+	//TODO implement me
+	panic("implement me")
+}
+
 func (w *networkWriter) release() {
 	for _, n := range w.caches {
 		if !n.readOnly {
