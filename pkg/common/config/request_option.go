@@ -16,11 +16,17 @@
 
 package config
 
+import "time"
+
 var preDefinedOpts []RequestOption
 
 type RequestOptions struct {
 	tags map[string]string
 	isSD bool
+
+	DialTimeout  time.Duration
+	ReadTimeout  time.Duration
+	WriteTimeout time.Duration
 }
 
 // RequestOption is the only struct to set request-level options.
@@ -55,6 +61,36 @@ func WithSD(b bool) RequestOption {
 	}}
 }
 
+// WithDialTimeout sets dial timeout.
+//
+// This is the request level configuration.It has a higher
+// priority than the client level configuration
+func WithDialTimeout(t time.Duration) RequestOption {
+	return RequestOption{F: func(o *RequestOptions) {
+		o.DialTimeout = t
+	}}
+}
+
+// WithReadTimeout sets read timeout.
+//
+// This is the request level configuration.It has a higher
+// priority than the client level configuration
+func WithReadTimeout(t time.Duration) RequestOption {
+	return RequestOption{F: func(o *RequestOptions) {
+		o.ReadTimeout = t
+	}}
+}
+
+// WithWriteTimeout sets write timeout.
+//
+// This is the request level configuration.It has a higher
+// priority than the client level configuration
+func WithWriteTimeout(t time.Duration) RequestOption {
+	return RequestOption{F: func(o *RequestOptions) {
+		o.WriteTimeout = t
+	}}
+}
+
 func (o *RequestOptions) Apply(opts []RequestOption) {
 	for _, op := range opts {
 		op.F(o)
@@ -83,6 +119,17 @@ func (o *RequestOptions) CopyTo(dst *RequestOptions) {
 	}
 
 	dst.isSD = o.isSD
+	dst.ReadTimeout = o.ReadTimeout
+	dst.WriteTimeout = o.WriteTimeout
+	dst.DialTimeout = o.DialTimeout
+}
+
+func (o *RequestOptions) Reset() {
+	o.tags = make(map[string]string)
+	o.isSD = false
+	o.DialTimeout = 0
+	o.ReadTimeout = 0
+	o.WriteTimeout = 0
 }
 
 // SetPreDefinedOpts Pre define some RequestOption here

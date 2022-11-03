@@ -194,7 +194,7 @@ func (req *Request) Reset() {
 	req.ResetSkipHeader()
 	req.CloseBodyStream()
 
-	req.options = nil
+	req.Options().Reset()
 }
 
 func (req *Request) IsURIParsed() bool {
